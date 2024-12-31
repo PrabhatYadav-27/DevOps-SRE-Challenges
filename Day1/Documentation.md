@@ -139,3 +139,25 @@ Select an option by entering a number (1-6) and press Enter.
 
 ## Email Report
 - The email report is sent when the user selects option 5 ("Send Comprehensive Report via Email"). Ensure the sendmail service is running before attempting to send the report.
+
+## Edit the crontab to schedule the script to run every 4 hours:
+- Run the command to open the crontab for editing:
+`crontab -e`
+
+- Add the following cron job:
+
+`0 */4 * * * /bin/bash /path/to/solution.sh`
+
+
+## Verify Cron Job:
+ 
+- To verify that the cron job has been added successfully, run:
+`crontab -l`
+- This will list all your scheduled cron jobs, and you should see the one you just added.
+
+
+
+
+
+## Background Reporting:
+- The script automatically sends the system health report every 4 hours in the background without interrupting the user’s interaction with the menu.

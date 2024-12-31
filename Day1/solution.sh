@@ -53,6 +53,18 @@ send_email_report() {
     fi
 }
 
+# Run the periodic report sending in the background
+send_periodic_reports() {
+    while true; do
+        send_email_report
+        sleep 14400  # Sleep for 4 hours (14400 seconds)
+    done
+}
+
+# Start the periodic report sending in the background
+send_periodic_reports &
+
+# Main menu loop for user interaction
 while true; do
     echo "================================="
     echo "System Health Check Menu"
